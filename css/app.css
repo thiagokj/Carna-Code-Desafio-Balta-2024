@@ -1,0 +1,17 @@
+.flex {
+    display: flex;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.btn {
+    /* display: inline-block; */
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #45FEFE;
+    color: #000000;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+}
