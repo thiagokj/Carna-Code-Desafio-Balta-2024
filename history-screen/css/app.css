@@ -1,0 +1,145 @@
+/* Estilos gerais */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+body {
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+/* Container principal */
+.layout-container-history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Logo Container */
+.logo-container-history {
+  width: 75px;
+  height: auto;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  border-color: #45fefe;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  padding: 10px; /* Adiciona padding branco nos cantos */
+}
+
+.logo-history {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Título */
+.title-history {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Campo de pesquisa */
+.search-box-history {
+  width: 100%;
+  max-width: 100%; /* Garante que o input não ultrapasse a largura do container pai */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 25px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  font-size: 16px; /* Tamanho da fonte */
+  color: #383838; /* Cor do texto */
+  background-color: #f6f6f6;
+  transition: all 0.3s ease; /* Transição suave para interações */
+  margin-bottom: 10px; /* Espaçamento abaixo do campo */
+  box-sizing: border-box; /* Inclui padding e borda na largura total do input */
+}
+
+/* Efeito de foco no campo de pesquisa */
+.search-box-history:focus {
+  width: 100%;
+  border-color: #45fefe; /* Borda azul ao focar */
+  box-shadow: 0 0 0 1px #45fefe; /* Contorno azul ao focar */
+  outline: none; /* Remove o contorno padrão do navegador */
+}
+
+/* Placeholder personalizado */
+.search-box-history::placeholder {
+  color: #bdbdbd;
+  opacity: 1;
+}
+
+/* Conteúdo principal */
+.content-history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+/* Tabela */
+.table-history {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-history tr {
+  display: flex;
+  align-items: flex-start; /* Alinha os itens ao topo */
+  padding-bottom: 10px;
+}
+
+.table-history td {
+  padding: 10px;
+  padding-left: 0;
+  border: none;
+}
+
+.table-history .imc-data-history {
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 5px !important;
+}
+
+.square-history {
+  width: 55px;
+  height: 55px;
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  margin-top: 4px !important;
+  padding-left: 0 !important;
+  margin-right: 4px !important;
+}
+
+.imc-data-history {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1; /* Permite que a célula cresça para preencher o espaço disponível */
+  padding-left: 0 !important;
+}
+
+.imc-data-history p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imc-data-history span {
+  margin-left: auto;
+  color: #bdbdbd;
+}
+
+.imc-data-history .imc-date-history {
+  color: #512020;
+}
+
+.imc-content-history p {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 2px;
+  padding-bottom: 2px;
+}
