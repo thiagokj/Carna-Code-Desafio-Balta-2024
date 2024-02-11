@@ -11,15 +11,15 @@
 </head>
 
 <body>
-    <div class="container flex flex-column flex-center">
-        <h1 class="title">Cálculo de IMC</h1>
-        <form action="" class="flex flex-column form">
-            <input type="text" id="Altura" placeholder="Altura" class="form-inputText">
-            <input type="text" id="Peso" placeholder="Peso" class="form-inputText">
-            <input type="text" id="Sexo" placeholder="Sexo" class="form-inputText">
+    <div class="container flex flex-col gap-1 items-center justify-center">
+        <h1 class="text-3xl">Cálculo de IMC</h1>
+        <form action="" class="flex flex-col gap-1 w-full">
+            <input type="text" id="Altura" placeholder="Altura" class="form-inputText p-5">
+            <input type="text" id="Peso" placeholder="Peso" class="form-inputText p-5">
+            <input type="text" id="Sexo" placeholder="Sexo" class="form-inputText p-5">
             <div>
                 <input type="checkbox" id="Idoso" class="form-inputCheckbox">
-                <label for="Idoso" class="form-label">Eu tenho 65 anos ou mais</label>
+                <label for="Idoso" class="form-label text-sm">Eu tenho 65 anos ou mais</label>
             </div>
             <input type="submit" value="Calcular meu IMC" class="btn">
             <a href="#" class="btn-outline">Entenda o cálculo</a>
