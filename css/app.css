@@ -1,29 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/* All pages; */
 body {
     font-family: 'Inter', sans-serif;
 }
 
-.title {
-    font-weight: 600;
+.bg-primary {
+    background-color: #2E1462;
 }
 
-.form-inputText {
-    background-color: #F6F6F6;
-    color: #666666;
-    border-radius: 8px;
-    border: none;
-    font-weight: 600;
+.bg-white {
+    background-color: #fff;
 }
 
-.form-inputCheckbox {
-    accent-color: red;
-    color: red;
-    background: red;
+.text-black {
+    color: #000;
 }
 
-.form-label {
-    color: #666666;
+.text-gray {
+    color: #666;
+}
+
+.logo {
+    width: 8rem;
+    border: 0.35rem solid #45FEFE;
+    background: white;
+    padding: 1rem;
+    border-radius: 1.75rem;
 }
 
 .btn {
@@ -50,7 +53,28 @@ body {
     text-align: center;
 }
 
-/* Recover Password Screen; */
-.rp-body {
-    background-color: #2E1462;
+.title {
+    font-weight: 600;
 }
+
+/* IMC Calc page; */
+.form-input {
+    background-color: #F6F6F6;
+    color: #666666;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+}
+
+.form-inputCheckbox {
+    accent-color: #45FEFE;
+    /* appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none; */
+}
+
+.form-label {
+    color: #666666;
+}
+
+/* Recover Password page; */
