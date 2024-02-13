@@ -16,19 +16,13 @@ jobs:
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: "8.x"
+          dotnet-version: "8.x" # Use the latest available version of .NET   6
 
-      - name: Change working directory to CarnaCode.Presentation
-        run: echo "Changing directory to pwa/CarnaCode.Presentation" && cd pwa/CarnaCode.Presentation || exit   1
-
-      - name: Restore dependencies
-        run: dotnet restore
-
-      - name: Publish Blazor WebAssembly app
-        run: dotnet publish --configuration Release --output ./publish
+      - name: Publish .NET Core Project
+        run: dotnet publish pwa/CarnaCode.Presentation/CarnaCode.Presentation.csproj -c Release -o ./publish --nologo
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.DEPLOY_TOKEN_TOKEN }}
-          publish_dir: ./publish # Caminho para o diretório de publicação
+          github_token: ${{ secrets.DEPLOY_TOKEN }}
+          publish_dir: ./publish # Path to the publish directory
