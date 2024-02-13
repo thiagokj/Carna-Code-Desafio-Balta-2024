@@ -31,8 +31,6 @@ public abstract class LocalStorageRepository<TModel> : IRepository<TModel>
             
             var newJson = JsonSerializer.Serialize(newModels);
             
-            Console.WriteLine(newJson);
-            
             await _jsRuntime.InvokeVoidAsync("localStorage.setItem", typeof(TModel).Name, newJson);
         }
         

@@ -1,9 +1,10 @@
-@page "/MyImc"
+@page "/imc"
 @using CarmaCode.Core.Domain
 @using CarmaCode.Core.Application
 @using CarmaCode.Core.Domain.Contracts
 @using CarnaCode.Infra.Repository
 @inject IJSRuntime JsRuntime
+@inject NavigationManager NavigationManager
 
 <section class="container max-w-xl mt-20">
     <form class="gap-1 rounded section-form px-5 pt-5 pb-10 flex flex-col items-center justify-center bg-white" method="post" @onsubmit="Calculate">
@@ -37,8 +38,9 @@
 			</button>
 		</div>
 		<div class="w-full flex">
-			<a class="w-full cursor-pointer text-center btn btn-secondary transition-all duration-500">
-				Entenda o cálculo
+			<a class="w-full cursor-pointer text-center btn btn-secondary transition-all duration-500" @onclick='() => { NavigationManager.NavigateTo("/historic"); }'>
+				@* Entenda o cálculo *@
+				Histórico
 			</a>
 		</div>
     </form>

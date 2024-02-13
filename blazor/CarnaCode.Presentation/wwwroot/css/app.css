@@ -253,7 +253,7 @@ body {
   font-weight: 600;
 }
 
-input {
+input, select {
   background-color: #F6F6F6;
   border: 1px solid #e8e8e8;
   padding: 0.95rem;

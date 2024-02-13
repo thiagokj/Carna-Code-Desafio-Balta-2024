@@ -8,11 +8,11 @@ public class BodyMassIndex
     
     [Required]
     [Range(0, 1000)]
-    public double Weight { get; set; }
+    public double? Weight { get; set; }
     
     [Required]
     [Range(0, 1000)]
-    public double Height { get; set; }
+    public double? Height { get; set; }
     
     [Required]
     [Range(0, 140)]
@@ -24,7 +24,7 @@ public class BodyMassIndex
     
     public BMICategoryType CategoryType { get; set; }
     
-    public double Bmi { get; set; }
+    public double? Bmi { get; set; }
     
     public Guid UserId { get; set; }
     
