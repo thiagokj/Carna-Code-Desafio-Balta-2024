@@ -22,7 +22,7 @@ jobs:
           dotnet-version: "8.x"
 
       - name: Change working directory to CarnaCode.Presentation
-        run: echo "Changing directory to pwa/CarnaCode.Presentation" && cd pwa/CarnaCode.Presentation || exit   1
+        run: echo "Changing directory to pwa/CarnaCode.Presentation" && cd pwa/CarnaCode.Presentation || exit  1
 
       - name: Restore dependencies
         run: dotnet restore
