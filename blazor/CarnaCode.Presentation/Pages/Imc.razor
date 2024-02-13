@@ -7,49 +7,65 @@
 @inject NavigationManager NavigationManager
 
 <section class="container max-w-xl mt-20">
-    <form class="gap-1 rounded section-form px-5 pt-5 pb-10 flex flex-col items-center justify-center bg-white" method="post" @onsubmit="Calculate">
-        <div class="flex flex-col gap-1">
+	<form class="gap-1 rounded section-form px-5 pt-5 pb-10 flex flex-col items-center justify-center bg-white"
+		method="post" @onsubmit="Calculate">
+		<div class="flex flex-col gap-1">
 			<h1 class="text-center text-4xl text-black">
 				Calcule seu IMC
 			</h1>
-        </div>
-        <div class="w-full">
-            <input class="w-full" id="height" placeholder="Altura" type="text" @bind="BodyMassIndex.Height" />
-        </div>
-        <div class="w-full">
-            <input class="w-full" id="weight" placeholder="Peso" type="text" @bind="BodyMassIndex.Weight" />
-        </div>
-        <div class="w-full">
-	        <select class="w-full" id="gender" placeholder="Sexo" @bind="BodyMassIndex.Gender">
-		        <option selected>Selecione seu sexo</option>
-		        <option value="@GenterType.Male)">Masculino</option>
-		        <option value="@GenterType.Female">Feminino</option>
-	        </select>
-        </div>
-        <div class="w-full flex">
+		</div>
+		<div class="w-full">
+			<input class="w-full" id="height" placeholder="Altura" type="text" @bind="BodyMassIndex.Height" />
+		</div>
+		<div class="w-full">
+			<input class="w-full" id="weight" placeholder="Peso" type="text" @bind="BodyMassIndex.Weight" />
+		</div>
+		<div class="w-full">
+			<select class="w-full" id="gender" placeholder="Sexo" @bind="BodyMassIndex.Gender">
+				<option selected>Selecione seu sexo</option>
+				<option value="@GenterType.Male)">Masculino</option>
+				<option value="@GenterType.Female">Feminino</option>
+			</select>
+		</div>
+		<div class="w-full flex">
 			<input class="transition-all duration-300" type="checkbox" id="elderly" />
 			<label class="flex justify-center" for="elderly">
 				<span class="ml-2 text-gray">Eu tenho 65 anos ou mais</span>
 			</label>
 		</div>
-        <div class="w-full flex">
+		<div class="w-full flex">
 			<button type="submit" class="w-full cursor-pointer btn btn-primary transition-all duration-500">
 				Calcular meu IMC
 			</button>
 		</div>
 		<div class="w-full flex">
-			<a class="w-full cursor-pointer text-center btn btn-secondary transition-all duration-500" @onclick='() => { NavigationManager.NavigateTo("/historic"); }'>
+			<a class="w-full cursor-pointer text-center btn btn-secondary transition-all duration-500"
+				@onclick='() => { NavigationManager.NavigateTo("/historic"); }'>
 				@* Entenda o cálculo *@
 				Histórico
 			</a>
 		</div>
-    </form>
+	</form>
 </section>
+
+<ModalIMC Title="@ModalTitle" Content="@ModalContent" OnClose="CloseModal" IsVisible="@IsModalVisible"
+	ValueImc="@ValueImc" />
 
 @code {
 	private BodyMassIndex BodyMassIndex { get; set; } = new BodyMassIndex();
 	private bool IsElderly { get; set; }
 	private string Token { get; set; }
+
+	// Modal
+	private bool IsModalVisible { get; set; }
+	public string ModalTitle { get; set; } = "Teste";
+	public string ModalContent { get; set; } = "Teste";
+	public double ValueImc { get; set; } = 30;
+
+	public void CloseModal()
+	{
+		IsModalVisible = false;
+	}
 
 	protected override async Task OnInitializedAsync()
 	{
@@ -70,10 +86,10 @@
 		var addBmiOfUserUseCase = new AddBmiOfUserUseCase(bmiRepository);
 
 		var addBmiOfUserInput = new AddBmiOfUserInput
-		{
-			BodyMassIndex = BodyMassIndex,
-			UserId = Guid.Parse(Token)
-		};
+			{
+				BodyMassIndex = BodyMassIndex,
+				UserId = Guid.Parse(Token)
+			};
 
 		await addBmiOfUserUseCase.ExecuteAsync(addBmiOfUserInput);
 	}
