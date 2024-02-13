@@ -1,3 +1,13 @@
+.logo {
+  display: block;
+  margin: 0 auto; /* Centraliza o logo horizontalmente */
+  margin-bottom: -60px; /* Cria um espaço abaixo do logo */
+  position: relative; /* Permite posicionamento relativo ao elemento pai */
+  top: -80px; /* Move o logo   80 pixels para cima */
+  width: 100px; /* Define a largura do logo */
+  height: auto; /* Mantém a proporção do logo */
+}
+
 .modal-imc {
   display: none; /* Inicialmente oculto */
   position: fixed;
@@ -12,23 +22,37 @@
 
 .modal-imc-content {
   background-color: #fefefe;
-  margin: 15% auto; /* Centraliza verticalmente e horizontalmente */
-  padding: 20px;
+  margin: 10% auto; /* Reduzido o margin-top para  10% para compactar o conteúdo */
+  padding: 30px; /* Aumentado o padding para acomodar o ícone de fechamento */
   border: 1px solid #888;
   width: 80%;
   max-width: 500px; /* Limita a largura máxima do conteúdo */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Adiciona sombra para melhor visualização */
+  position: relative; /* Para posicionar absolutamente o ícone de fechamento dentro deste elemento */
 }
 
-/* Estilos para centralizar o conteúdo dentro do modal */
-.modal-imc-content h2,
+.modal-imc-content h4 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 .modal-imc-content p {
   text-align: center;
+  color: #666666;
 }
 
 /* Estilos para centralizar o botão de fechar */
 .modal-imc-content button {
   display: block;
   margin: 20px auto;
+}
+
+/* Estilo para o ícone de fechamento */
+.close-icon {
+  position: absolute;
+  top: -4px;
+  right: 4px;
+  font-size: 28px;
+  cursor: pointer;
 }

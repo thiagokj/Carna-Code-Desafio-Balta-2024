@@ -4,11 +4,12 @@
 
 <div class="modal-imc" style="display:@(IsVisible ? "block" : "none");">
     <div class="modal-imc-content">
-        <h2>@Title</h2>
+        <img src="assets/img/icon-no-bg.png" alt="Logo" class="logo" />
+        <h4>@Title</h4>
         <p>@Content</p>
         <button class="btn btn-primary" @onclick="RegisterIMC">Registrar Medidas</button>
-        <button class="btn btn-primary" @onclick="GoToHistoryPage">Ver meu histórico</button>
-        <button class="btn btn-primary" @onclick="Close">Fechar</button>
+        <button class="btn btn-secondary" @onclick="GoToHistoryPage">Ver meu histórico</button>
+        <span class="close-icon" @onclick="Close">&times;</span>
     </div>
 </div>
 
