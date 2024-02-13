@@ -1,0 +1,25 @@
+﻿@page "/"
+@using CarnaCode.Infra.Repository
+@inject IJSRuntime JsRuntime
+@inject NavigationManager NavigationManager
+<PageTitle>Home</PageTitle>
+
+<div>
+	
+</div>
+
+@code {
+	protected override async Task OnInitializedAsync()
+	{
+		var authRepository = new AuthLocalStorageRepository(JsRuntime);
+		var auth = await authRepository.FindAllAsync();
+
+		if (auth.Count() > 0)
+		{
+			NavigationManager.NavigateTo("/historic");
+			return;
+		}
+		
+		NavigationManager.NavigateTo("/login");
+	}
+}
