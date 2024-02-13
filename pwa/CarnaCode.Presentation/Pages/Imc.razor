@@ -8,8 +8,7 @@
 
 <section class="container max-w-xl mt-20">
   <EditForm class="gap-1 rounded section-form px-5 pt-5 pb-10 flex flex-col items-center justify-center bg-white"
-            Model="@Model"
-            OnValidSubmit="Calculate">
+    Model="@Model" OnValidSubmit="OnValidSubmit">
 
     <div class="flex flex-col gap-1">
       <h1 class="text-center text-4xl text-black">
@@ -28,15 +27,15 @@
     <div class="w-full">
       <InputSelect class="w-full" id="gender" placeholder="Sexo" @bind-Value="Model.Gender">
         <option selected>Selecione seu sexo</option>
-        <option value="@GenterType.Male)">Masculino</option>
+        <option value="@GenterType.Male">Masculino</option>
         <option value="@GenterType.Female">Feminino</option>
       </InputSelect>
     </div>
 
     <div class="w-full flex">
-      <InputCheckbox class="transition-all duration-300" type="checkbox" id="elderly" @bind-Value="IsElderly" />
+      <InputCheckbox class="transition-all duration-300" type="checkbox" id="elderly" @bind-Value="@IsSenior" />
       <label class="flex justify-center" for="elderly">
-        <span class="ml-2 text-gray">Eu tenho  65 anos ou mais</span>
+        <span class="ml-2 text-gray">Eu tenho 65 anos ou mais</span>
       </label>
     </div>
 
@@ -48,7 +47,7 @@
 
     <div class="w-full flex">
       <a class="w-full cursor-pointer text-center btn btn-secondary transition-all duration-500"
-         @onclick='() => { NavigationManager.NavigateTo("/historic"); }'>
+        @onclick='() => { NavigationManager.NavigateTo("/historic"); }'>
         @* Entenda o cálculo *@
         Histórico
       </a>
@@ -56,24 +55,15 @@
   </EditForm>
 </section>
 
-@* <ModalIMC Title="@ModalTitle" Content="@ModalContent" OnClose="CloseModal" IsVisible="@IsModalVisible"
-          ValueImc="@ValueImc" /> *@
+<ModalIMC OnClose="CloseModal" IsVisible="@IsModalVisible" Model="@Model" Token="@Token" />
 
 @code {
   private BodyMassIndex Model { get; set; } = new();
-  private bool IsElderly { get; set; }
   private string Token { get; set; }
+  private bool IsSenior { get; set; }
 
   // Modal
-  private bool IsModalVisible { get; set; }
-  public string ModalTitle { get; set; } = "Teste";
-  public string ModalContent { get; set; } = "Teste";
-  public double ValueImc { get; set; } = 30;
-
-  public void CloseModal()
-  {
-    IsModalVisible = false;
-  }
+  private bool IsModalVisible { get; set; } = false;
 
   protected override async Task OnInitializedAsync()
   {
@@ -84,21 +74,17 @@
     Token = auth!.Token;
   }
 
-  private async Task Calculate()
+  public void OnValidSubmit()
   {
-    Model.Age = IsElderly ? 65 : 18;
-    Model.Calculate();
-    Model.Categorize();
+    // Atualizar a idade com base no checkbox
+    Model.Age = IsSenior ? 65 : 18;
 
-    var bmiRepository = new BmiLocalStorageRepository(JsRuntime);
-    var addBmiOfUserUseCase = new AddBmiOfUserUseCase(bmiRepository);
+    // Mostrar o modal
+    IsModalVisible = true;
+  }
 
-    var addBmiOfUserInput = new AddBmiOfUserInput
-      {
-        UserId = Guid.Parse(Token),
-        BodyMassIndex = Model
-      };
-
-    await addBmiOfUserUseCase.ExecuteAsync(addBmiOfUserInput);
+  public void CloseModal()
+  {
+    IsModalVisible = false;
   }
 }
