@@ -19,9 +19,6 @@ jobs:
       - name: Publish .NET Core Project
         run: dotnet publish pwa/CarnaCode.Presentation/CarnaCode.Presentation.csproj -c Release -o ./publish --nologo
 
-      - name: Add .nojekyll file
-        run: touch release/wwwroot/.nojekyll
-
       - name: Commit wwwroot to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
