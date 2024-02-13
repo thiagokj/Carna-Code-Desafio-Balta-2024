@@ -13,16 +13,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: List directory contents
-        run: dir /s /b
-
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "8.x"
 
       - name: Change working directory to CarnaCode.Presentation
-        run: echo "Changing directory to pwa/CarnaCode.Presentation" && cd pwa/CarnaCode.Presentation || exit  1
+        run: echo "Changing directory to pwa/CarnaCode.Presentation" && cd pwa/CarnaCode.Presentation || exit   1
 
       - name: Restore dependencies
         run: dotnet restore
@@ -33,5 +30,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.DEPLOY_TOKEN }}
+          github_token: ${{ secrets.DEPLOY_TOKEN_TOKEN }}
           publish_dir: ./publish # Caminho para o diretório de publicação
