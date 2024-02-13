@@ -1,0 +1,34 @@
+.modal-imc {
+  display: none; /* Inicialmente oculto */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-imc-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* Centraliza verticalmente e horizontalmente */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px; /* Limita a largura máxima do conteúdo */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19); /* Adiciona sombra para melhor visualização */
+}
+
+/* Estilos para centralizar o conteúdo dentro do modal */
+.modal-imc-content h2,
+.modal-imc-content p {
+  text-align: center;
+}
+
+/* Estilos para centralizar o botão de fechar */
+.modal-imc-content button {
+  display: block;
+  margin: 20px auto;
+}
