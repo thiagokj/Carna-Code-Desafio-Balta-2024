@@ -19,9 +19,6 @@ jobs:
       - name: Publish .NET Core Project
         run: dotnet publish pwa/CarnaCode.Presentation/CarnaCode.Presentation.csproj -c Release -o ./publish --nologo
 
-      - name: copy index.html to 404.html
-        run: cp release/wwwroot/index.html release/wwwroot/404.html
-
       - name: Add .nojekyll file
         run: touch release/wwwroot/.nojekyll
 
