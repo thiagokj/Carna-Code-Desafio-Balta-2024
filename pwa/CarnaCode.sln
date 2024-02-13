@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarnaCode.Presentation", "CarnaCode.Presentation\CarnaCode.Presentation.csproj", "{273A6318-800D-4AFF-94D9-0A0863E0E293}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarnaCode.Core", "CarnaCode.Core\CarnaCode.Core.csproj", "{43C2A180-867B-4B7B-A714-42F207F73793}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{273A6318-800D-4AFF-94D9-0A0863E0E293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273A6318-800D-4AFF-94D9-0A0863E0E293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273A6318-800D-4AFF-94D9-0A0863E0E293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273A6318-800D-4AFF-94D9-0A0863E0E293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43C2A180-867B-4B7B-A714-42F207F73793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43C2A180-867B-4B7B-A714-42F207F73793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43C2A180-867B-4B7B-A714-42F207F73793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43C2A180-867B-4B7B-A714-42F207F73793}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

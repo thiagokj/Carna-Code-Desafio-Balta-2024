@@ -1,0 +1,70 @@
+@page "/login"
+@using CarmaCode.Core.Domain.Contracts
+@using CarnaCode.Infra.Repository
+@using CarmaCode.Core.Application
+@inject IJSRuntime JsRuntime
+@inject NavigationManager NavigationManager
+
+<section class="container max-w-xl mt-20">
+	<form class="gap-1 rounded section-form px-5 pt-5 pb-10 flex flex-col items-center justify-center bg-white" method="post" @onsubmit="LoginAsync">
+		<div class="-mt-20">
+			<img class="logo" src="/assets/icon-no-bg.png" alt="logo" />
+		</div>
+		<div class="flex flex-col gap-1">
+			<h1 class="text-center text-4xl text-black">
+				Faça seu Login
+			</h1>
+			
+			<h2 class="text-center text-xl text-gray">
+				Insira suas informações antes de medir seu IMC
+			</h2>
+		</div>
+		<div class="w-full">
+			<input class="w-full" placeholder="Seu e-mail" type="text" @bind="LoginInput.Email" />
+		</div>
+		<div class="w-full">
+			<input class="w-full" placeholder="Seu senha" type="text" @bind="LoginInput.Password" />
+		</div>
+		<div class="w-full flex">
+			<input class="transition-all duration-300" type="checkbox" id="not-robot" @bind="LoginInput.ImNotARobot" />
+			<label class="flex justify-center" for="not-robot">
+				<span class="ml-2 text-gray">Não sou um robô</span>
+			</label>
+		</div>
+		<AntiforgeryToken />
+		<div class="w-full flex">
+			<button type="submit" class="w-full cursor-pointer btn btn-primary transition-all duration-500">
+				Fazer Login
+			</button>
+		</div>
+		<div class="w-full flex">
+			<a class="w-full cursor-pointer text-center btn btn-secondary transition-all duration-500">
+				Não tenho um acesso
+			</a>
+		</div>
+	</form>
+</section>
+
+@code {
+	private LoginInput LoginInput { get; set; } = new LoginInput();
+	
+	protected override async Task OnInitializedAsync()
+	{
+		var authRepository = new AuthLocalStorageRepository(JsRuntime);
+		var auth = await authRepository.FindAllAsync();
+
+		if (auth.Count() > 0)
+		{
+			NavigationManager.NavigateTo("/imc");
+		}
+	}
+
+	private async Task LoginAsync()
+	{
+		var userRepository = new UserLocalStorageRepository(JsRuntime);
+		var authRepository = new AuthLocalStorageRepository(JsRuntime);
+		var loginUseCase = new LoginUseCase(userRepository, authRepository);
+		var auth = await loginUseCase.ExecuteAsync(LoginInput);
+		Console.WriteLine(auth);
+	}
+}

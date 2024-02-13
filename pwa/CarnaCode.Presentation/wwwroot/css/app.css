@@ -1,0 +1,297 @@
+/* Estilos gerais */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@keyframes checkboxCheckedAnimation {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+@keyframes zoom-in {
+  40% {
+    margin-top: calc(-10rem * 0.8);
+  }
+
+  100% {
+    /* width: 250%; */
+    margin-top: 100rem;
+  }
+}
+
+@keyframes fade-out {
+  0%, 75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* All pages; */
+.bg-primary {
+  background-color: #2E1462;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+.btn {
+  padding: 1rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 1rem;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background-color: #45FEFE;
+  color: black;
+}
+
+.btn-primary:hover {
+  background-color: #35e0e0;
+}
+
+.btn-secondary {
+  background-color: #fff;
+  border: 0.25rem solid #45FEFE;
+  color: black;
+}
+
+.btn-secondary:hover {
+  background-color: #f6f6f6;
+  border: 0.25rem solid #35e0e0;
+}
+
+.logo {
+  width: 8rem;
+  border: 0.35rem solid #45FEFE;
+  background: white;
+  padding: 1rem;
+  border-radius: 1.75rem;
+}
+
+.logo-splash {
+  width: 8rem;
+}
+
+.new-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  width: 40%; 
+  border-radius: 1.75rem;
+  border: 0.35rem solid #45FEFE;
+}
+.content {
+  width: 100%;
+}
+
+.splash {
+  pointer-events: none;
+}
+
+.splash-animation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+
+  animation: fade-out 3s;
+}
+
+.splash-animation .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10rem;
+  fill: white;
+
+  animation: zoom-in 1.5s;
+  animation-delay: 1.5s;
+}
+
+.text-black {
+  color: #000;
+}
+
+.text-gray {
+  color: #666;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.logo-history {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Campo de pesquisa */
+.search-box-history {
+  width: 100%;
+  max-width: 100%; /* Garante que o input não ultrapasse a largura do container pai */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 25px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  font-size: 16px; /* Tamanho da fonte */
+  color: #383838; /* Cor do texto */
+  background-color: #f6f6f6;
+  transition: all 0.3s ease; /* Transição suave para interações */
+  margin-bottom: 10px; /* Espaçamento abaixo do campo */
+  box-sizing: border-box; /* Inclui padding e borda na largura total do input */
+}
+
+/* Efeito de foco no campo de pesquisa */
+.search-box-history:focus {
+  width: 100%;
+  border-color: #45fefe; /* Borda azul ao focar */
+  box-shadow: 0 0 0 1px #45fefe; /* Contorno azul ao focar */
+  outline: none; /* Remove o contorno padrão do navegador */
+}
+
+/* Placeholder personalizado */
+.search-box-history::placeholder {
+  color: #bdbdbd;
+  opacity: 1;
+}
+
+/* Conteúdo principal */
+.content-history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+/* Tabela */
+.table-history {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-history tr {
+  display: flex;
+  align-items: flex-start; /* Alinha os itens ao topo */
+  padding-bottom: 10px;
+}
+
+.table-history td {
+  padding: 10px;
+  padding-left: 0;
+  border: none;
+}
+
+.table-history .imc-data-history {
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 5px !important;
+}
+
+.square-history {
+  width: 55px;
+  height: 55px;
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  margin-top: 4px !important;
+  padding-left: 0 !important;
+  margin-right: 4px !important;
+}
+
+.imc-data-history {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1; /* Permite que a célula cresça para preencher o espaço disponível */
+  padding-left: 0 !important;
+}
+
+.imc-data-history p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imc-data-history span {
+  margin-left: auto;
+  color: #bdbdbd;
+}
+
+.imc-data-history .imc-date-history {
+  color: #512020;
+}
+
+.imc-content-history p {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 2px;
+  padding-bottom: 2px;
+}
+
+/* Inputs */
+.form-input { /* IMC Calc page; */
+  background-color: #F6F6F6;
+  color: #666666;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+}
+
+input, select {
+  background-color: #F6F6F6;
+  border: 1px solid #e8e8e8;
+  padding: 0.95rem;
+  border-radius: 0.50rem;
+}
+
+input::placeholder {
+  color: #BDBDBD;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: #F6F6F6;
+  border: 1px solid #e8e8e8;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #45FEFE;
+  border: 1px solid #45FEFE;
+}
+
+input[type="checkbox"]:checked:before {
+  content: "✔";
+  position: absolute;
+  color: #2E1462;
+  font-size: 1.5rem;
+  margin-left: -0.35rem;
+  margin-top: -0.65rem;
+  animation: checkboxCheckedAnimation 0.5s ease forwards;
+}
+
+.form-label {
+  color: #666666;
+}
+
