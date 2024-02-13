@@ -1,0 +1,97 @@
+@page "/Historic"
+@using CarmaCode.Core.Domain
+@using CarnaCode.Infra.Repository
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
+
+<section class="container max-w-xl mt-20">
+  <form class="gap-1 rounded px-5 pt-5 pb-10 flex flex-col items-center justify-center bg-white" method="POST">
+    <div class="-mt20">
+      <img class="logo" src="assets/icon-no-bg.png" alt="" />
+    </div>
+    <div class="flex flex-col gap-1">
+      <h1 class="text-center text-4xl text-black">
+        Histórico
+      </h1>
+  
+      <h2 class="text-center text-xl text-gray">
+        Pesquisar por registros anteriores
+      </h2>
+    </div>
+
+    <div class="w-full">
+      <input placeholder="Pesquisar..." class="search-box-history w-full" />
+    </div>
+
+    <table class="table-history">
+      @foreach (var bmi in BodyMassIndex)
+      {
+        <tr>
+          <td>
+            <div class="square-history"></div>
+          </td>
+          <td class="imc-data-history">
+            <div class="imc-content-history">
+              @if (bmi.CategoryType == BMICategoryType.Normal)
+              {
+                <p>
+                  <strong>Peso Ideal✅</strong>
+                  <span class="imc-date-history">8m atrás</span>
+                </p>
+                <p>
+                  Parabéns, você está no seu peso ideal,
+                  continue mantendo seu estilo!
+                </p>
+              }
+              else if (bmi.CategoryType == BMICategoryType.Underweight)
+              {
+                <p>
+                  <strong>Desnutrição⛔</strong>
+                  <span>12/10/2023</span>
+                </p>
+                <p>
+                  Estamos quase lá! Faça alguns ajustes para
+                  ficar no peso ideal!
+                </p>
+              }
+              else
+              {
+                <p>
+                  <strong>Sobrepeso⛔</strong>
+                  <span>12/10/2023</span>
+                </p>
+                <p>
+                  Estamos quase lá! Faça alguns ajustes para
+                  ficar no peso ideal!
+                </p>
+              }
+
+            </div>
+          </td>
+        </tr> 
+      }
+    </table>
+    <div class="w-full flex">
+      <button class="w-full cursor-pointer btn btn-primary transition-all duration-500" @onclick='() => { NavigationManager.NavigateTo("/imc"); }'>
+        Fazer novo calculo
+      </button>
+    </div>
+    <div class="w-full flex">
+      <a class="w-full cursor-pointer text-center btn btn-secondary transition-all duration-500" @onclick='() => { NavigationManager.NavigateTo("/register"); }'>
+        Não tenho um acesso
+      </a>
+    </div>
+  </form>
+  </section>
+  
+@code {
+  private List<BodyMassIndex> BodyMassIndex { get; set; } = new List<BodyMassIndex>(); 
+    
+  protected override async Task OnInitializedAsync()
+  {
+    var bmiRepository = new BmiLocalStorageRepository(JsRuntime);
+    var bmi = await bmiRepository.FindAllAsync();
+
+    BodyMassIndex = bmi.ToList();
+  }
+}

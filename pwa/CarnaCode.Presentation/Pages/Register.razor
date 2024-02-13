@@ -1,0 +1,65 @@
+@page "/register"
+@using CarmaCode.Core.Domain.Contracts
+@using CarmaCode.Core.Application
+@using CarnaCode.Infra.Repository
+@inject IJSRuntime JsRuntime
+@inject NavigationManager NavigationManager
+
+<section class="container max-w-xl mt-20">
+	<form class="gap-1 rounded section-form px-5 pt-5 pb-10 flex flex-col items-center justify-center bg-white" method="post" @onsubmit="RegisterAsync">
+		<div class="-mt-20">
+			<img class="logo" src="/assets/icon-no-bg.png" alt="logo" />
+		</div>
+		<div class="flex flex-col gap-1">
+			<h1 class="text-center text-4xl text-black">
+				Crie sua conta
+			</h1>
+			
+			<h2 class="text-center text-xl text-gray">
+				Você precisa criar uma conta
+			</h2>
+		</div>
+		<div class="w-full">
+			<input class="w-full" placeholder="Seu usuário" type="text" @bind="CreateUserInput.Name" />
+		</div>
+		<div class="w-full">
+			<input class="w-full" placeholder="Seu e-mail" type="text" @bind="CreateUserInput.Email" />
+		</div>
+		<div class="w-full">
+			<input class="w-full" placeholder="Seu senha" type="text" @bind="CreateUserInput.Password" />
+		</div>
+		<div class="w-full">
+        	<input class="w-full" placeholder="Seu senha" type="text" @bind="CreateUserInput.ConfirmPassword" />
+        </div>
+		<div class="w-full flex">
+			<input class="transition-all duration-300" type="checkbox" id="not-robot" @bind="CreateUserInput.ImNotARobot" />
+			<label class="flex justify-center" for="not-robot">
+				<span class="ml-2 text-gray">Não sou um robô</span>
+			</label>
+		</div>
+		<AntiforgeryToken />
+		<div class="w-full flex">
+			<button type="submit" class="w-full cursor-pointer btn btn-primary transition-all duration-500">
+				Fazer Cadastro
+			</button>
+		</div>
+		<div class="w-full flex">
+			<a class="w-full cursor-pointer text-center btn btn-secondary transition-all duration-500" @onclick='() => { NavigationManager.NavigateTo("/login"); }'>
+				Já possuo conta
+			</a>
+		</div>
+	</form>
+</section>
+
+@code {
+	private CreateUserInput CreateUserInput { get; set; } = new CreateUserInput();
+
+	private async Task RegisterAsync()
+	{
+		var userRepository = new UserLocalStorageRepository(JsRuntime);
+		var createUserUseCase = new CreateUserUseCase(userRepository);
+		var createUserOutput = await createUserUseCase.ExecuteAsync(CreateUserInput);
+		
+		Console.WriteLine(createUserOutput);
+	}
+}
