@@ -8,7 +8,7 @@
 
 <section class="container max-w-xl mt-20">
   <EditForm class="gap-1 rounded section-form px-5 pt-5 pb-10 flex flex-col items-center justify-center bg-white"
-    Model="@Model" OnValidSubmit="OnValidSubmit">
+            Model="@Model" OnValidSubmit="OnValidSubmit">
 
     <div class="flex flex-col gap-1">
       <h1 class="text-center text-4xl text-black">
@@ -47,7 +47,7 @@
 
     <div class="w-full flex">
       <a class="w-full cursor-pointer text-center btn btn-secondary transition-all duration-500"
-        @onclick='() => { NavigationManager.NavigateTo("/historic"); }'>
+         @onclick='() => { NavigationManager.NavigateTo("historic"); }'>
         @* Entenda o cálculo *@
         Histórico
       </a>
