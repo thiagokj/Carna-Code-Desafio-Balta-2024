@@ -19,25 +19,25 @@ jobs:
         with:
           dotnet-version: "8.x"
       - name: Publish .NET Core Project
-        run: dotnet publish pwa/CarnaCode.Presentation/CarnaCode.Presentation.csproj -c Release -o ./publish --nologo
+        run: dotnet publish pwa/CarnaCode.Presentation/CarnaCode.Presentation.csproj -c Release --output build
       - name: Move content from wwwroot to root
         run: |
-          mv ./publish/wwwroot/* ./publish/
-          rm -rf ./publish/wwwroot
+          mv build/wwwroot/* build/
+          rm -rf build/wwwroot
       - name: Find and change base-tag in index.html
         run: |
-          INDEX_FILE=$(find ./publish -type f -name "index.html")
+          INDEX_FILE=$(find build -type f -name "index.html")
           if [ -n "$INDEX_FILE" ]; then
             sed -i 's/<base href="\/" \/>/<base href="\/Carnacode\/" \/>/g' "$INDEX_FILE"
           else
             echo "index.html not found."
-            exit  1
+            exit   1
           fi
       - name: Create .nojekyll file
-        run: touch ./publish/.nojekyll
+        run: touch build/.nojekyll
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: publish
+          FOLDER: build
