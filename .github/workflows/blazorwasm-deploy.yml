@@ -24,8 +24,8 @@ jobs:
         run: dotnet publish pwa/CarnaCode.Presentation/CarnaCode.Presentation.csproj -c Release -o release --nologo
 
       # changes the base-tag in index.html from '/' to 'Carnacode' to match GitHub Pages repository subdirectory
-      - name: Change base-tag in index.html from / to Carnacode
-        run: sed -i 's/<base href="\/" \/>/<base href="\/Carnacode\/" \/>/g' release/wwwroot/index.html
+      - name: Change base-tag in index.html from / to Carna-Code-Desafio-Balta-2024
+        run: sed -i 's/<base href="\/" \/>/<base href="\/Carna-Code-Desafio-Balta-2024\/" \/>/g' release/wwwroot/index.html
 
       # copy index.html to  404.html to serve the same file when a file is not found
       - name: Copy index.html to  404.html
