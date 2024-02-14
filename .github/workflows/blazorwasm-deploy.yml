@@ -14,21 +14,27 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "8.x"
-
       - name: Publish .NET Core Project
         run: dotnet publish pwa/CarnaCode.Presentation/CarnaCode.Presentation.csproj -c Release -o ./publish --nologo
-
-      - name: Change base-tag in index.html from / to Carnacode
-        run: sed -i 's/<base href="\/" \/>/<base href="\/Carnacode\/" \/>/g' ./publish/index.html
-
+      - name: Move content from wwwroot to root
+        run: |
+          mv ./publish/wwwroot/* ./publish/
+          rm -rf ./publish/wwwroot
+      - name: Find and change base-tag in index.html
+        run: |
+          INDEX_FILE=$(find ./publish -type f -name "index.html")
+          if [ -n "$INDEX_FILE" ]; then
+            sed -i 's/<base href="\/" \/>/<base href="\/Carnacode\/" \/>/g' "$INDEX_FILE"
+          else
+            echo "index.html not found."
+            exit  1
+          fi
       - name: Create .nojekyll file
         run: touch ./publish/.nojekyll
-
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
