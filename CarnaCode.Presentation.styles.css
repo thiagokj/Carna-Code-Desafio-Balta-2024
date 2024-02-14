@@ -1,5 +1,5 @@
 /* /Pages/Components/ModalIMC.razor.rz.scp.css */
-.logo[b-nl181aahk3] {
+.logo[b-1x002ymjwt] {
     display: block;
     margin: 0 auto; /* Centraliza o logo horizontalmente */
     margin-bottom: -60px; /* Cria um espaço abaixo do logo */
@@ -9,7 +9,7 @@
     height: auto; /* Mantém a proporção do logo */
 }
 
-.modal-imc[b-nl181aahk3] {
+.modal-imc[b-1x002ymjwt] {
     display: none; /* Inicialmente oculto */
     position: fixed;
     z-index: 1000; /* Garante que o modal esteja acima de outros elementos */
@@ -21,7 +21,7 @@
     background-color: rgba(0, 0, 0, 0.4); /* Fundo esmaecido */
 }
 
-.modal-imc-content[b-nl181aahk3] {
+.modal-imc-content[b-1x002ymjwt] {
     background-color: #ffffff; /* Fundo branco */
     margin: 0; /* Remove margens para centralizar o modal */
     padding: 30px;
@@ -36,24 +36,24 @@
 }
 
 
-    .modal-imc-content h4[b-nl181aahk3] {
+    .modal-imc-content h4[b-1x002ymjwt] {
         text-align: center;
         margin-bottom: 10px;
     }
 
-    .modal-imc-content p[b-nl181aahk3] {
+    .modal-imc-content p[b-1x002ymjwt] {
         text-align: center;
         color: #666666;
     }
 
     /* Estilos para centralizar o botão de fechar */
-    .modal-imc-content button[b-nl181aahk3] {
+    .modal-imc-content button[b-1x002ymjwt] {
         display: block;
         margin: 20px auto;
     }
 
 /* Estilo para o ícone de fechamento */
-.close-icon[b-nl181aahk3] {
+.close-icon[b-1x002ymjwt] {
     position: absolute;
     top: -4px;
     right: 4px;
