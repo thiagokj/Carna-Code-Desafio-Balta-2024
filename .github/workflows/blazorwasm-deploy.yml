@@ -21,10 +21,8 @@ jobs:
       - name: Publish .NET Core Project
         run: dotnet publish pwa/CarnaCode.Presentation/CarnaCode.Presentation.csproj -c Release -o ./publish --nologo
 
-      - name: Move content to root
-        run: |
-          mv ./publish/wwwroot/* ./publish/
-          rmdir ./publish/wwwroot
+      - name: Change base-tag in index.html from / to Carnacode
+        run: sed -i 's/<base href="\/" \/>/<base href="\/Carnacode\/" \/>/g' ./publish/index.html
 
       - name: Create .nojekyll file
         run: touch ./publish/.nojekyll
