@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "CarnaCode.Presentation",
   "resources": {
-    "hash": "sha256-QmVVzO0x0yFjm6CF2L3v0O8DYOCB1ZngBd1qM+0gpQw=",
+    "hash": "sha256-2SeEspmxEjc6AvhIxwK6hNDma6TEV2IZYYE/YLDDQXs=",
     "jsModuleNative": {
       "dotnet.native.8.0.2.jgt5nhn140.js": "sha256-gPMK16QWoJSTxorlZJqcVtbBRTniIQWlLsJN2O4cJHg="
     },
@@ -18,8 +18,8 @@
     },
     "assembly": {
       "Blazored.LocalStorage.wasm": "sha256-OaMAAd5n7ORfyur5e3QIyEVKJ76MKIvwbg7/icnnYcU=",
-      "CarnaCode.Core.wasm": "sha256-FCf0IvTjCCLBH4jT1Se3O9EoV5YpxpNL8C8CBO3DHX8=",
-      "CarnaCode.Presentation.wasm": "sha256-ODBikKVpUFOXJ/dCWu/SDbLAXKjfsSByIjaDNdm2LWM=",
+      "CarnaCode.Core.wasm": "sha256-JHK7R16zmRZ1ajGzzXzenPjotdvw8xcy7oDwHUd2Xmk=",
+      "CarnaCode.Presentation.wasm": "sha256-a86Mi8abcVnvI6//vAh+N3IoJlL6W70X9o2+h9Vg1IM=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-GRKBwfc4EYidjKMiwumFjq2yNVxI6hwlyQDuS3ZAzQw=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-jTWDVtVYggMQVS9D2sUPERyL8GxNHszax56bL34Ny7g=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-5+rJ2RAUd0F2W9FcfU8G8JLNYpIX+CDlhm1gRLHHtqs=",
