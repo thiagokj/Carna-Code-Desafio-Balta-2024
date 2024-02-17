@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "CarnaCode.Presentation",
   "resources": {
-    "hash": "sha256-2SeEspmxEjc6AvhIxwK6hNDma6TEV2IZYYE/YLDDQXs=",
+    "hash": "sha256-h+RWXVqbSzs0Qm4yXHa/jFFSpK2wfR8svWYdZnfZRiU=",
     "jsModuleNative": {
       "dotnet.native.8.0.2.jgt5nhn140.js": "sha256-gPMK16QWoJSTxorlZJqcVtbBRTniIQWlLsJN2O4cJHg="
     },
@@ -9,7 +9,7 @@
       "dotnet.runtime.8.0.2.8djt6nqnbz.js": "sha256-54KSaoOArNfygQbV+r4B5y3ys53v2tnvFIyZcZiUmi0="
     },
     "wasmNative": {
-      "dotnet.native.wasm": "sha256-C2P+OTYZAJlmqo6rc4heqwvIVVsXIF8MAxC6WRe96Eg="
+      "dotnet.native.wasm": "sha256-zB5AHJiQSopwyr0rcTtY+fjb5/hetlb8oSloJcXoorM="
     },
     "icu": {
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -18,8 +18,8 @@
     },
     "assembly": {
       "Blazored.LocalStorage.wasm": "sha256-OaMAAd5n7ORfyur5e3QIyEVKJ76MKIvwbg7/icnnYcU=",
-      "CarnaCode.Core.wasm": "sha256-JHK7R16zmRZ1ajGzzXzenPjotdvw8xcy7oDwHUd2Xmk=",
-      "CarnaCode.Presentation.wasm": "sha256-a86Mi8abcVnvI6//vAh+N3IoJlL6W70X9o2+h9Vg1IM=",
+      "CarnaCode.Core.wasm": "sha256-MFupQLH3PqrzOmFuNBkgiHUxQ803Esy3WI5bFuAsTnA=",
+      "CarnaCode.Presentation.wasm": "sha256-vU1erwsu9AoEpeCCIXAAnwegc8Cbf3d1Cmqlv5z5edc=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-GRKBwfc4EYidjKMiwumFjq2yNVxI6hwlyQDuS3ZAzQw=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-jTWDVtVYggMQVS9D2sUPERyL8GxNHszax56bL34Ny7g=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-5+rJ2RAUd0F2W9FcfU8G8JLNYpIX+CDlhm1gRLHHtqs=",
