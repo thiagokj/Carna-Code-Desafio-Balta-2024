@@ -1,3 +1,0 @@
-C:\DEV\CSharp\CarnaCode-2024\01_Layout\Carna-Code-Desafio-Balta-2024\pwa\CarnaCode.Core\bin\Release\net8.0\publish\CarnaCode.Core.dll
-C:\DEV\CSharp\CarnaCode-2024\01_Layout\Carna-Code-Desafio-Balta-2024\pwa\CarnaCode.Core\bin\Release\net8.0\publish\CarnaCode.Core.deps.json
-C:\DEV\CSharp\CarnaCode-2024\01_Layout\Carna-Code-Desafio-Balta-2024\pwa\CarnaCode.Core\bin\Release\net8.0\publish\CarnaCode.Core.pdb

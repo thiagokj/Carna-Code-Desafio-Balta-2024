@@ -1,1 +1,0 @@
-C:\DEV\CSharp\CarnaCode-2024\01_Layout\Carna-Code-Desafio-Balta-2024\pwa\CarnaCode.Presentation\bin\Release\net8.0\publish\web.config
