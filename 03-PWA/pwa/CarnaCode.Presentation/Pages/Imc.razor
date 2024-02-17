@@ -1,0 +1,90 @@
+@page "/imc"
+@using CarmaCode.Core.Domain
+@using CarmaCode.Core.Application
+@using CarmaCode.Core.Domain.Contracts
+@using CarnaCode.Infra.Repository
+@inject IJSRuntime JsRuntime
+@inject NavigationManager NavigationManager
+
+<section class="container max-w-xl mt-20">
+  <EditForm class="gap-1 rounded section-form px-5 pt-5 pb-10 flex flex-col items-center justify-center bg-white"
+    Model="@Model" OnValidSubmit="OnValidSubmit">
+
+    <div class="flex flex-col gap-1">
+      <h1 class="text-center text-4xl text-black">
+        Calcule seu IMC
+      </h1>
+    </div>
+
+    <div class="w-full">
+      <InputNumber class="w-full" id="height" placeholder="Altura" type="number" @bind-Value="Model.Height" />
+    </div>
+
+    <div class="w-full">
+      <InputNumber class="w-full" id="weight" placeholder="Peso" type="number" @bind-Value="Model.Weight" />
+    </div>
+
+    <div class="w-full">
+      <InputSelect class="w-full" id="gender" placeholder="Sexo" @bind-Value="Model.Gender">
+        <option selected>Selecione seu sexo</option>
+        <option value="@GenterType.Male">Masculino</option>
+        <option value="@GenterType.Female">Feminino</option>
+      </InputSelect>
+    </div>
+
+    <div class="w-full flex">
+      <InputCheckbox class="transition-all duration-300" type="checkbox" id="elderly" @bind-Value="@IsSenior" />
+      <label class="flex justify-center" for="elderly">
+        <span class="ml-2 text-gray">Eu tenho 65 anos ou mais</span>
+      </label>
+    </div>
+
+    <div class="w-full flex">
+      <button type="submit" class="w-full cursor-pointer btn btn-primary transition-all duration-500">
+        Calcular meu IMC
+      </button>
+    </div>
+
+    <div class="w-full flex">
+      <a class="w-full cursor-pointer text-center btn btn-secondary transition-all duration-500"
+        @onclick='() => { NavigationManager.NavigateTo("historic"); }'>
+        @* Entenda o cálculo *@
+        Histórico
+      </a>
+    </div>
+  </EditForm>
+</section>
+
+<ModalIMC OnClose="CloseModal" IsVisible="@IsModalVisible" Model="@Model" Token="@Token" />
+
+@code {
+  private BodyMassIndex Model { get; set; } = new();
+  private string Token { get; set; }
+  private bool IsSenior { get; set; }
+
+  // Modal
+  private bool IsModalVisible { get; set; } = false;
+
+  protected override async Task OnInitializedAsync()
+  {
+    var authRepository = new AuthLocalStorageRepository(JsRuntime);
+    var auths = await authRepository.FindAllAsync();
+    var auth = auths.FirstOrDefault();
+
+    Token = auth!.Token;
+  }
+
+  public void OnValidSubmit()
+  {
+    // Atualizar a idade com base no checkbox
+    Model.Age = IsSenior ? 65 : 18;
+
+    // Mostrar o modal
+    IsModalVisible = true;
+  }
+
+  public void CloseModal()
+  {
+    IsModalVisible = false;
+  }
+}

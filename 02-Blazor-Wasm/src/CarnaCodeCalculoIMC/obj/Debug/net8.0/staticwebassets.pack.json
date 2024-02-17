@@ -1,0 +1,77 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\02_BlazorWASM_Calculo_IMC\\carnacode-balta-2024-desafio-02\\src\\CarnaCodeCalculoIMC\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\02_BlazorWASM_Calculo_IMC\\carnacode-balta-2024-desafio-02\\src\\CarnaCodeCalculoIMC\\obj\\Debug\\net8.0\\compressed\\5u42ow6lej.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\02_BlazorWASM_Calculo_IMC\\carnacode-balta-2024-desafio-02\\src\\CarnaCodeCalculoIMC\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CarnaCodeCalculoIMC.styles.css",
+      "PackagePath": "staticwebassets\\CarnaCodeCalculoIMC.styles.css"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\02_BlazorWASM_Calculo_IMC\\carnacode-balta-2024-desafio-02\\src\\CarnaCodeCalculoIMC\\obj\\Debug\\net8.0\\service-worker-assets.js",
+      "PackagePath": "staticwebassets\\service-worker-assets.js"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\02_BlazorWASM_Calculo_IMC\\carnacode-balta-2024-desafio-02\\src\\CarnaCodeCalculoIMC\\obj\\Debug\\net8.0\\service-worker\\service-worker.published.js",
+      "PackagePath": "staticwebassets\\service-worker.js"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\02_BlazorWASM_Calculo_IMC\\carnacode-balta-2024-desafio-02\\src\\CarnaCodeCalculoIMC\\wwwroot\\assets\\img\\icon-no-bg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icon-no-bg.png"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\02_BlazorWASM_Calculo_IMC\\carnacode-balta-2024-desafio-02\\src\\CarnaCodeCalculoIMC\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\02_BlazorWASM_Calculo_IMC\\carnacode-balta-2024-desafio-02\\src\\CarnaCodeCalculoIMC\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\02_BlazorWASM_Calculo_IMC\\carnacode-balta-2024-desafio-02\\src\\CarnaCodeCalculoIMC\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\02_BlazorWASM_Calculo_IMC\\carnacode-balta-2024-desafio-02\\src\\CarnaCodeCalculoIMC\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\02_BlazorWASM_Calculo_IMC\\carnacode-balta-2024-desafio-02\\src\\CarnaCodeCalculoIMC\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\02_BlazorWASM_Calculo_IMC\\carnacode-balta-2024-desafio-02\\src\\CarnaCodeCalculoIMC\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\02_BlazorWASM_Calculo_IMC\\carnacode-balta-2024-desafio-02\\src\\CarnaCodeCalculoIMC\\wwwroot\\manifest.webmanifest",
+      "PackagePath": "staticwebassets\\manifest.webmanifest"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\02_BlazorWASM_Calculo_IMC\\carnacode-balta-2024-desafio-02\\src\\CarnaCodeCalculoIMC\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CarnaCodeCalculoIMC.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CarnaCodeCalculoIMC.props",
+      "PackagePath": "build\\CarnaCodeCalculoIMC.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CarnaCodeCalculoIMC.props",
+      "PackagePath": "buildMultiTargeting\\CarnaCodeCalculoIMC.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CarnaCodeCalculoIMC.props",
+      "PackagePath": "buildTransitive\\CarnaCodeCalculoIMC.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

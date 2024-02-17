@@ -1,0 +1,48 @@
+@using Blazored.LocalStorage
+@inject NavigationManager Navigation
+@inject ILocalStorageService LocalStorage
+
+<div class="modal-imc" style="display:@(IsVisible ? "block" : "none");">
+    <div class="modal-imc-content">
+        <img src="assets/img/icon-no-bg.png" alt="Logo" class="logo" />
+        <h4>@Title</h4>
+        <p>@Content</p>
+        <button class="btn btn-primary" @onclick="RegisterIMC">Registrar Medidas</button>
+        <button class="btn btn-secondary" @onclick="GoToHistoryPage">Ver meu histórico</button>
+        <span class="close-icon" @onclick="Close">&times;</span>
+    </div>
+</div>
+
+
+@code {
+    [Parameter] public string Title { get; set; }
+    [Parameter] public string Content { get; set; }
+    [Parameter] public EventCallback OnClose { get; set; }
+    [Parameter] public bool IsVisible { get; set; }
+    [Parameter] public double Imc { get; set; }
+
+    public async Task RegisterIMC()
+    {
+        var imcRecord = new
+        {
+            Id = Guid.NewGuid(),
+            Imc = Imc,
+            Timestamp = DateTime.Now
+        };
+
+        await LocalStorage.SetItemAsync($"imc_{imcRecord.Id}", imcRecord);
+        Close();
+    }
+
+    public void GoToHistoryPage()
+    {
+        // Implemente a lógica para navegar para a página de histórico
+        Navigation.NavigateTo("/historico");
+    }
+
+    public void Close()
+    {
+        IsVisible = false;
+        OnClose.InvokeAsync(null);
+    }
+}

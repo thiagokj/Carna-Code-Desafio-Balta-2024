@@ -1,0 +1,110 @@
+﻿@using Blazored.LocalStorage
+@inject NavigationManager Navigation
+@inject ILocalStorageService LocalStorage
+
+<h3>CalculateIMC</h3>
+
+<EditForm class="gap-1 rounded px-5 pt-5 pb-10 flex flex-col items-center justify-center bg-white" Model="@Model"
+    OnValidSubmit="OnValidSubmitAsync" FormName="calculate-imc">
+    <DataAnnotationsValidator />
+
+    <div class="flex flex-col gap-1">
+        <h1 class="text-center text-4xl text-black">
+            Calcule seu IMC
+        </h1>
+    </div>
+
+    <div class="w-full">
+        <InputNumber @bind-Value="Model.Height" class="w-full" id="Altura" placeholder="Altura" />
+        <ValidationMessage For="@(() => Model.Height)" />
+    </div>
+
+    <div class="w-full">
+        <InputNumber @bind-Value="Model.Weight" class="w-full" id="Peso" placeholder="Peso" />
+        <ValidationMessage For="@(() => Model.Weight)" />
+    </div>
+
+    <div class="w-full">
+        <InputSelect class="input-select-styled" id="Sexo" @bind-Value="Model.Gender">
+            <option value="@Gender.NotSelected">Selecione...</option>
+            <option value="@Gender.Male">Masculino</option>
+            <option value="@Gender.Female">Feminino</option>
+        </InputSelect>
+        <ValidationMessage For="@(() => Model.Gender)" />
+    </div>
+
+    <div class="w-full flex">
+        <InputCheckbox class="transition-all duration-300" @bind-Value="Model.IsSenior" />
+        <label class="flex justify-center" for="not-robot">
+            <span class="ml-2 text-gray">Eu tenho 65 anos ou mais</span>
+        </label>
+    </div>
+
+    <div class="w-full flex">
+        <button type="submit" class="w-full cursor-pointer btn btn-primary transition-all duration-500">
+            Calcular meu IMC
+        </button>
+    </div>
+
+    <div class="w-full flex">
+        <a class="w-full cursor-pointer text-center btn btn-secondary transition-all duration-500">
+            Entenda o cálculo
+        </a>
+    </div>
+</EditForm>
+
+<ModalIMC Title="@ModalTitle" Content="@ModalContent" OnClose="CloseModal" IsVisible="@IsModalVisible" Imc="@Imc" />
+
+@code {
+    public InfoIMC Model { get; set; } = new();
+    private bool IsModalVisible { get; set; }
+    private string ModalTitle { get; set; }
+    private string ModalContent { get; set; }
+    [Parameter] public double Imc { get; set; }
+
+    public (string title, string content, double imc) CalculateAndGetResult()
+    {
+        // Converter a altura de centímetros para metros
+        double heightInMeters = Model.Height / 100.0;
+
+        // Calcular o IMC
+        double imc = Math.Round(Model.Weight / Math.Pow(heightInMeters, 2), 2);
+
+        // Definir o título e o conteúdo do modal com base no IMC
+        string title, content;
+
+        if (imc < 18.5)
+        {
+            title = "⛔ Magreza";
+            content = "Cuidado você está com baixo peso, dê uma atenção para sua saúde";
+        }
+        else if (imc >= 18.5 && imc <= 24.9)
+        {
+            title = "✅ Parabéns!";
+            content = "Você está no peso ideal, continue mantendo este estilo!";
+        }
+        else
+        {
+            title = "⛔ Sobrepeso";
+            content = "Cuidado você está com sobrepeso, dê uma atenção para sua saúde";
+        }
+
+        return (title, content, imc);
+    }
+
+    public async Task OnValidSubmitAsync()
+    {
+        var result = CalculateAndGetResult();
+        ModalTitle = result.title;
+        ModalContent = result.content;
+        Imc = result.imc;
+
+        // Mostrar o modal
+        IsModalVisible = true;
+    }
+
+    public void CloseModal()
+    {
+        IsModalVisible = false;
+    }
+}

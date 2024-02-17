@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/modern-normalize.css">
+    <link rel="stylesheet" href="../css/utils.css">
+    <link rel="stylesheet" href="../css/app.css">
+    <title>Calculo IMC</title>
+</head>
+
+<body class="bg-primary flex flex-col items-center justify-center min-h-screen">
+    <div class="bg-primary splash splash-animation">
+		<img class="logo logo-splash" src="../assets/icon-no-bg.png" />
+	</div>
+    <section class="container max-w-xl mt-20">
+        <form class="gap-1 rounded px-5 pt-5 pb-10 flex flex-col items-center justify-center bg-white" method="POST">
+            <div class="flex flex-col gap-1">
+				<h1 class="text-center text-4xl text-black">
+					Calcule seu IMC
+				</h1>
+            </div>
+            <div class="w-full">
+                <input class="w-full" id="Altura" placeholder="Altura" type="text" />
+            </div>
+            <div class="w-full">
+                <input class="w-full" id="Peso" placeholder="Peso" type="text" />
+            </div>
+            <div class="w-full">
+                <input class="w-full" id="Sexo" placeholder="Sexo" type="text" />
+            </div>
+            <div class="w-full flex">
+				<input class="transition-all duration-300" type="checkbox" checked id="Idoso" />
+				<label class="flex justify-center" for="not-robot">
+					<span class="ml-2 text-gray">Eu tenho 65 anos ou mais</span>
+				</label>
+			</div>
+            <div class="w-full flex">
+				<button type="submit" class="w-full cursor-pointer btn btn-primary transition-all duration-500">
+					Calcular meu IMC
+				</button>
+			</div>
+			<div class="w-full flex">
+				<a class="w-full cursor-pointer text-center btn btn-secondary transition-all duration-500">
+					Entenda o cálculo
+				</a>
+			</div>
+        </form>
+    </section>
+</body>
+
+</html>

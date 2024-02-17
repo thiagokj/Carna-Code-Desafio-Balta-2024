@@ -1,0 +1,91 @@
+@using CarmaCode.Core.Application
+@using CarmaCode.Core.Domain
+@using CarmaCode.Core.Domain.Contracts
+@using CarnaCode.Infra.Repository
+@inject IJSRuntime JsRuntime
+@inject NavigationManager NavigationManager
+
+<div class="container max-w-xl mt-20 ">
+  <div class="px-5 pt-5 pb-10 flex flex-col items-center justify-center bg-white gap-1 rounded" style="display:@(IsVisible ? "block" : "none");">
+    <div class="flex flex-col gap-1 text-center">
+      <img src="assets/icon-no-bg.png" alt="Logo" class="logo w-full" />
+      <h4>@Title</h4>
+      <p>@Content</p>
+      <button class="btn btn-primary" @onclick="RegisterIMC">Registrar Medidas</button>
+      @* <button class="btn btn-secondary" @onclick="GoToHistoryPage">Ver meu histórico</button> *@
+      <span class="close-icon" @onclick="Close">&times;</span>
+    </div>
+  </div>
+</div>
+
+
+@code {
+  // Parametros enviados para o Modal
+  [Parameter] public EventCallback OnClose { get; set; }
+  [Parameter] public string? Token { get; set; }
+  [Parameter] public BodyMassIndex Model { get; set; }
+  [Parameter] public bool IsVisible { get; set; }
+
+  private string Title { get; set; }
+  private string Content { get; set; }
+
+  protected override void OnParametersSet()
+  {
+    if (Model != null)
+    {
+      Model.Calculate();
+      Model.Categorize();
+
+      ResultBMI();
+    }
+  }
+
+  private void ResultBMI()
+  {
+    if (Model != null && Model.Bmi.HasValue)
+    {
+      double imc = Model.Bmi.Value;
+
+      if (imc < 18.5)
+      {
+        Title = "⛔ Magreza";
+        Content = "Cuidado você está com baixo peso, dê uma atenção para sua saúde";
+      }
+      else if (imc >= 18.5 && imc <= 24.9)
+      {
+        Title = "✅ Parabéns!";
+        Content = "Você está no peso ideal, continue mantendo este estilo!";
+      }
+      else
+      {
+        Title = "⛔ Sobrepeso";
+        Content = "Cuidado você está com sobrepeso, dê uma atenção para sua saúde";
+      }
+    }
+  }
+
+  public void Close()
+  {
+    IsVisible = false;
+    OnClose.InvokeAsync(null);
+  }
+
+  private async Task RegisterIMC()
+  {
+    if (Model != null)
+    {
+      var bmiRepository = new BmiLocalStorageRepository(JsRuntime);
+      var addBmiOfUserUseCase = new AddBmiOfUserUseCase(bmiRepository);
+
+      var addBmiOfUserInput = new AddBmiOfUserInput
+        {
+          UserId = Guid.Parse(Token),
+          BodyMassIndex = Model
+        };
+
+      await addBmiOfUserUseCase.ExecuteAsync(addBmiOfUserInput);
+    }
+
+    Close();
+  }
+}

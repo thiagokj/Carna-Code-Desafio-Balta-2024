@@ -1,0 +1,93 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\obj\\Debug\\net8.0\\compressed\\ogc4n2zl7k.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CarnaCode.Presentation.styles.css",
+      "PackagePath": "staticwebassets\\CarnaCode.Presentation.styles.css"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\obj\\Debug\\net8.0\\service-worker-assets.js",
+      "PackagePath": "staticwebassets\\service-worker-assets.js"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\obj\\Debug\\net8.0\\service-worker\\service-worker.published.js",
+      "PackagePath": "staticwebassets\\service-worker.js"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\wwwroot\\assets\\escala-de-perda-de-peso-com-centimetros-vista-do-topo.png",
+      "PackagePath": "staticwebassets\\assets\\escala-de-perda-de-peso-com-centimetros-vista-do-topo.png"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\wwwroot\\assets\\icon-no-bg.png",
+      "PackagePath": "staticwebassets\\assets\\icon-no-bg.png"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\wwwroot\\assets\\icon.png",
+      "PackagePath": "staticwebassets\\assets\\icon.png"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\wwwroot\\assets\\warning.png",
+      "PackagePath": "staticwebassets\\assets\\warning.png"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\wwwroot\\css\\modern-normalize.css",
+      "PackagePath": "staticwebassets\\css\\modern-normalize.css"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\wwwroot\\css\\utils.css",
+      "PackagePath": "staticwebassets\\css\\utils.css"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\wwwroot\\icon-512.png",
+      "PackagePath": "staticwebassets\\icon-512.png"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\wwwroot\\manifest.webmanifest",
+      "PackagePath": "staticwebassets\\manifest.webmanifest"
+    },
+    {
+      "Id": "C:\\DEV\\CSharp\\CarnaCode-2024\\01_Layout\\Carna-Code-Desafio-Balta-2024\\pwa\\CarnaCode.Presentation\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CarnaCode.Presentation.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CarnaCode.Presentation.props",
+      "PackagePath": "build\\CarnaCode.Presentation.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CarnaCode.Presentation.props",
+      "PackagePath": "buildMultiTargeting\\CarnaCode.Presentation.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CarnaCode.Presentation.props",
+      "PackagePath": "buildTransitive\\CarnaCode.Presentation.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
